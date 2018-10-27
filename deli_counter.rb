@@ -1,5 +1,6 @@
 # Write your code here.
 
+
 def line(katz_deli)
   if katz_deli.empty?
     puts "The line is currently empty."
@@ -41,6 +42,31 @@ def take_a_number(line, name)
     line[:numbers].push(line[:ticket_number]) 
   line[:ticket_number] += 1
   line[:numbers].last 
+=======
+line = []
+
+def line(line)
+  if line.empty?
+     puts "The line is currently empty."
+   else 
+     print "The line is currently:"
+     line.each_with_index do |name, index|
+     print "#{index + 1}. #{name} "
+   end
+  end
+ end  
+  line(["Logan", "Avi", "Spencer"])
+  line([])
+
+
+
+def take_a_number(line)
+  
+  line[:numbers].push(line[:ticket_number]) 
+  line[:ticket_number] += 1
+  line[:numbers].last 
+    
+
 end
 
 
@@ -61,5 +87,4 @@ now_serving(line) #=> 1        line[:numbers] = [2]
 now_serving(line) #=> 2        line[:numbers] = []
 
 take_a_number(line) #=> 3      line[:numbers] = [3]
-=end  
-  
+=end
